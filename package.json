@@ -1,0 +1,24 @@
+{
+  "name": "frontviewengineers",
+  "version": "1.0.0",
+  "description": "Web App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/88dennis/frontviewengineers.git"
+  },
+  "author": "Dennis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/88dennis/frontviewengineers/issues"
+  },
+  "homepage": "https://github.com/88dennis/frontviewengineers#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  }
+}

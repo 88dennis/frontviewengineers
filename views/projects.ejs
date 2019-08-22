@@ -1,0 +1,13 @@
+<% include partials/header %>
+    <h1>Project Page</h1>
+
+    <%projectFiles.forEach(function(proj){%>
+        <div>
+            <h4>
+                <%=proj.name%>
+            </h4>
+            <img src="<%=proj.image%>" style="width: 10%;" alt="">
+        </div>
+        <%})%>
+
+            <% include partials/footer %>
