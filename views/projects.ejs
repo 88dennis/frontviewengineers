@@ -1,13 +1,44 @@
 <% include partials/header %>
-    <h1>Project Page</h1>
 
-    <%projectFiles.forEach(function(proj){%>
-        <div>
-            <h4>
-                <%=proj.name%>
-            </h4>
-            <img src="<%=proj.image%>" style="width: 10%;" alt="">
+
+
+    <div class="container">
+        <header class="jumbotron">
+            <h1>Project Page</h1>
+            <p>
+                <a class="btn btn-primary btn-large" href="/newProject">Add a Project</a>
+            </p>
+        </header>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Our Projects</h3>
+            </div>
         </div>
-        <%})%>
 
-            <% include partials/footer %>
+        <div class="row text-center" style="display: flex; flex-wrap: wrap">
+            <%projectFiles.forEach(function(proj){%>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card" style="margin-bottom: 20px">
+                        <img src="<%=proj.image%>" style="width: 100%;" alt="">
+                        <div class="caption">
+                            <h4>
+                                <%=proj.name%>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <%})%>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <% include partials/footer %>

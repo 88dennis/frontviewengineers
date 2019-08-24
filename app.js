@@ -6,6 +6,12 @@ let projectArr = [
     { name: "butter", image: "https://i.imgur.com/QblTtQH.jpg" },
     { name: "cloud", image: "https://i.imgur.com/uQQ3nWl.jpg" },
     { name: "rain", image: "https://i.imgur.com/91yP5jP.jpg" },
+    { name: "butter", image: "https://i.imgur.com/QblTtQH.jpg" },
+    { name: "cloud", image: "https://i.imgur.com/uQQ3nWl.jpg" },
+    { name: "rain", image: "https://i.imgur.com/91yP5jP.jpg" },
+    { name: "butter", image: "https://i.imgur.com/QblTtQH.jpg" },
+    { name: "cloud", image: "https://i.imgur.com/uQQ3nWl.jpg" },
+    { name: "rain", image: "https://i.imgur.com/91yP5jP.jpg" }
 ]
 
 app.use(bodyParser.urlencoded({ extended: true }));
