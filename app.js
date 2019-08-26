@@ -2,17 +2,32 @@ let express = require("express");
 let app = express();
 let PORT = 3000;
 let bodyParser = require("body-parser")
-let projectArr = [
-    { name: "butter", image: "https://i.imgur.com/QblTtQH.jpg" },
-    { name: "cloud", image: "https://i.imgur.com/uQQ3nWl.jpg" },
-    { name: "rain", image: "https://i.imgur.com/91yP5jP.jpg" },
-    { name: "butter", image: "https://i.imgur.com/QblTtQH.jpg" },
-    { name: "cloud", image: "https://i.imgur.com/uQQ3nWl.jpg" },
-    { name: "rain", image: "https://i.imgur.com/91yP5jP.jpg" },
-    { name: "butter", image: "https://i.imgur.com/QblTtQH.jpg" },
-    { name: "cloud", image: "https://i.imgur.com/uQQ3nWl.jpg" },
-    { name: "rain", image: "https://i.imgur.com/91yP5jP.jpg" }
-]
+let mongoose = require("mongoose")
+
+mongoose.connect("mongodb://localhost/frontviewApp")
+
+//SCHEMA SET UP
+let projectSchema = new mongoose.Schema({
+    name: String,
+    image: String
+});
+
+let Project = mongoose.model("Project", projectSchema);
+
+// Project.create({
+//         name: "cloud",
+//         image: "https://i.imgur.com/uQQ3nWl.jpg"
+
+//     },
+//     function(err, proj) {
+//         if (err) {
+//             console.log("ERROR")
+//             console.log(err)
+//         } else {
+//             console.log(proj)
+//         }
+//     })
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -22,8 +37,16 @@ app.get("/", function(req, res) {
 })
 
 app.get("/projectdisplay", function(req, res) {
-    res.render("projects", {
-        projectFiles: projectArr
+    Project.find({}, function(err, allProjects) {
+        if (err) {
+            console.log(err)
+        } else {
+            res.render("projects", {
+                //projectFiles is the variable used in the html/ejs
+                //allProjects is the parameter which are the objects from the db collection we created
+                projectFiles: allProjects
+            })
+        }
     })
 })
 
